@@ -42,6 +42,7 @@ export class EmailService {
         
         const delay = (this.config.baseDelay || 1000) * Math.pow(2, retries);
         await new Promise(resolve => setTimeout(resolve, delay));
+        
       }
     }
     throw new Error('Max retries exceeded');
